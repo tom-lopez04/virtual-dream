@@ -1,0 +1,45 @@
+/* General Page Setup */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('sunsetclouds.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+/* Main Title */
+h1 {
+    font-size: 3em;
+    position: absolute;
+    top: 40%; /* Adjust this value to move the header up or down */
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    margin: 0; /* Remove margins for better control */
+}
+
+/* Container for Channels */
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 100px; /* Space the channels container from the top */
+}
+/* Remove underline and make the whole channel clickable */
+.menu a {
+    text-decoration: none;
+}
+
+.menu a:hover {
+    cursor: pointer;
+}

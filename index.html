@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Dreams</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #87CEEB;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .channel {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: transform 0.3s;
+        }
+
+        .channel:hover {
+            transform: scale(1.1);
+        }
+
+        .channel img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Virtual Dream</h1>
+    <div class="menu">
+            <a href="why.html">
+        <div class="channel">
+            <img src="epicsmiley.png" alt="Channel 1">
+            <div class="label">Why?</div>
+        </div>
+        </a>
+        <a href="whoami.html">
+        <div class="channel">
+            <img src="https://via.placeholder.com/60" alt="Channel 2">
+            <div class="label">Channel 2</div>
+        </div>
+    </a>
+        <div class="channel">
+            <img src="https://via.placeholder.com/60" alt="Channel 3">
+            <div class="label">Channel 3</div>
+        </div>
+        <div class="channel">
+            <img src="https://via.placeholder.com/60" alt="Channel 4">
+            <div class="label">Channel 4</div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('hills.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+.imgsource{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+
+}
+
+.imgsource a {
+    text-decoration: none;
+    color: #00406B;
+}
+
+.imgsource a:hover {
+    cursor: pointer;
+}
+
+.home{
+    position: absolute;
+    left: 10px;
+    top: 0px;
+}
+
+
+.home a {
+    text-decoration: none;
+    color: #23008c;
+}
+
+.home a:hover {
+    cursor: pointer;
+}
