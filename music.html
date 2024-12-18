@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="music-styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Dream - Music Player</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        #audio-controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        #now-playing {
+            padding: 10px;
+            background-color: #333;
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #05c545;
+        }
+
+        .song-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .song-list li {
+            margin: 10px 0;
+        }
+
+        .song-list button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1894bd3d;
+            color: white;
+            cursor: pointer;
+        }
+
+        .song-list button:hover {
+            background-color: #87ceeb;
+        }
+
+        .btn {
+            background-color: #add8e6;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            border: 2px solid white;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #87ceeb;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="container">
+        <h1>Music Player</h1>
+        
+        <ul class="song-list">
+            <li><button onclick="playSong('KingPS2.mp3', 'King JNR (PlayStation 2 ver.) - TEKKEN Project')">King Jnr (PlayStation 2 ver.) - TEKKEN Project</button></li>
+            <li><button onclick="playSong('PluckingTulips.mp3', 'Plucking Tulips (Tulip Festival) - TEKKEN Project')">Plucking Tulips (Tulip Festival) - TEKKEN Project</button></li>
+            <li><button onclick="playSong('Your Sunset.mp3', 'Your Sunset - TEKKEN Project')">Your Sunset - TEKKEN Project</button></li>
+            <li><button onclick="playSong('FaithSorrow.mp3', 'Faith & Sorrow (Instrumental) - 16:9 Krollo')">Faith & Sorrow (Instrumental) - 16:9 Krollo</button></li>
+            <li><button onclick="playSong('IN MY DREAMS.mp3', 'IN MY DREAMS - 16:9 Krollo')">IN MY DREAMS - 16:9 Krollo</button></li>
+            <li><button onclick="playSong('RansomwareIntermission.mp3', 'Ransomware Intermission - 16:9 Krollo ft. 16:9 Kilomanji')">Ransomware Intermission - 16:9 Krollo ft. 16:9 Kilomanji</button></li>
+        </ul>
+
+        <!-- Music Player -->
+        <div id="audio-controls">
+            <audio id="audioPlayer" controls autoplay>
+                <source id="audioSource" src="KingPS2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p id="now-playing">Choose a song from the list above to start listening!</p>
+        </div>
+
+        
+    </div>
+    <div class="content">
+        <p>In all honesty, just check out <a href="https://www.mikamioda.com/" target="_blank">16:9 Krollo.</a> I really like his music.</p>
+        
+        </div>
+
+    <div class="home">
+        <a href="index.html"><h1>Home</h1></a>
+
+    <script>
+        function playSong(file, title) {
+            var audioPlayer = document.getElementById('audioPlayer');
+            var audioSource = document.getElementById('audioSource');
+            var nowPlaying = document.getElementById('now-playing');
+
+            audioSource.src = file;
+            audioPlayer.load(); // Load the new source
+            audioPlayer.play(); // Play the new song
+
+            nowPlaying.textContent = 'Now playing: ' + title; // Update now playing text
+        }
+
+        
+    </script>
+</body>
+</html>

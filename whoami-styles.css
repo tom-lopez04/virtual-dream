@@ -15,6 +15,17 @@ body {
     position: relative;
 }
 
+.container{
+    text-decoration: none;
+    color:darkgrey;
+}
+
+.content{
+    text-decoration: none;
+    color:darkgrey;
+
+}
+
 .imgsource{
     position: absolute;
     left: 10px;
@@ -33,7 +44,7 @@ body {
 
 .home{
     position: absolute;
-    left: 10px;
+    left: 20px;
     top: 0px;
 }
 

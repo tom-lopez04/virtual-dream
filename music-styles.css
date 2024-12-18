@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('t3skyring.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+
+.content a {
+
+    text-decoration: none;
+    color:aqua
+}
+
+
+.home{
+    position: absolute;
+    left: 20px;
+    top: 0px;
+}
+
+
+.home a {
+    text-decoration: none;
+    color: #23008c;
+}
+
+
+
+.home a:hover {
+    cursor: pointer;
+}
