@@ -22,7 +22,7 @@ body {
 
 .content{
     text-decoration: none;
-    color:darkgrey;
+    color:rgb(55, 0, 107);
 
 }
 
@@ -56,4 +56,15 @@ body {
 
 .home a:hover {
     cursor: pointer;
+}
+.container{
+
+    text-decoration:none;
+    color: #000000;
+}
+.content{
+
+    text-decoration:none;
+    color: #000000;
+    background-color: #0078b496;
 }
