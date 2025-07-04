@@ -37,7 +37,7 @@
             margin-top: 10px;
             font-size: 1rem;
             color: #05c545;
-        }
+        } 
 
         .song-list {
             list-style: none;
@@ -132,6 +132,28 @@
         #queue-controls button:hover {
             background-color: #87ceeb;
         }
+
+        @media (max-width: 600px) {
+    .container, .song-list-container, #queue-container {
+        max-width: 100%;
+        width: 95vw;
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.2rem;
+    }
+    .song-list button, #queue-controls button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    #audio-controls audio {
+        max-width: 100vw;
+    }
+    #queue-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
     </style>
 </head>
 <body>
