@@ -80,6 +80,58 @@
         .btn:hover {
             background-color: #87ceeb;
         }
+
+        /* New styles for queue */
+        #queue-container {
+            margin-top: px;
+            width: 100%;
+            max-width: 350px;
+            text-align: left;
+            padding: 15px; /* Add padding inside the box */
+            border-radius: 10px; /* Rounded corners */
+            background-color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center horizontally */
+            justify-content: flex-start; /* Adjust vertical alignment */
+        }
+        
+
+        #queue-container h2 {
+            margin-top: 0; /* Remove extra margin from the heading */
+            text-align: center; /* Center horizontally */
+        }
+
+        #queue-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        #queue-list li {
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #queue-controls {
+            margin-top: 10px;
+        }
+
+        #queue-controls button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1894bd3d;
+            color: white;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        #queue-controls button:hover {
+            background-color: #87ceeb;
+        }
     </style>
 </head>
 <body>
@@ -88,15 +140,25 @@
     <div class="container">
         <h1>Music Player</h1>
         
+    <div class="song-list-container">
         <ul class="song-list">
-            <li><button onclick="playSong('KingPS2.mp3', 'King JNR (PlayStation 2 ver.) - TEKKEN Project')">King Jnr (PlayStation 2 ver.) - TEKKEN Project</button></li>
-            <li><button onclick="playSong('PluckingTulips.mp3', 'Plucking Tulips (Tulip Festival) - TEKKEN Project')">Plucking Tulips (Tulip Festival) - TEKKEN Project</button></li>
-            <li><button onclick="playSong('Your Sunset.mp3', 'Your Sunset - TEKKEN Project')">Your Sunset - TEKKEN Project</button></li>
-            <li><button onclick="playSong('FaithSorrow.mp3', 'Faith & Sorrow (Instrumental) - 16:9 Krollo')">Faith & Sorrow (Instrumental) - 16:9 Krollo</button></li>
-            <li><button onclick="playSong('IN MY DREAMS.mp3', 'IN MY DREAMS - 16:9 Krollo')">IN MY DREAMS - 16:9 Krollo</button></li>
-            <li><button onclick="playSong('RansomwareIntermission.mp3', 'Ransomware Intermission - 16:9 Krollo ft. 16:9 Kilomanji')">Ransomware Intermission - 16:9 Krollo ft. 16:9 Kilomanji</button></li>
+            <li><button onclick="playSong('audio/KingPS2.mp3', 'King JNR (PlayStation 2 ver.) - TEKKEN Project')">King Jnr (PlayStation 2 ver.) - TEKKEN Project</button></li>
+            <li><button onclick="playSong('audio/PluckingTulips.mp3', 'Plucking Tulips (Tulip Festival) - TEKKEN Project')">Plucking Tulips (Tulip Festival) - TEKKEN Project</button></li>
+            <li><button onclick="playSong('audio/Your Sunset.mp3', 'Your Sunset - TEKKEN Project')">Your Sunset - TEKKEN Project</button></li>
+            <li><button onclick="playSong('audio/FaithSorrow.mp3', 'Faith & Sorrow (Instrumental) - 16:9 Krollo')">Faith & Sorrow (Instrumental) - 16:9 Krollo</button></li>
+            <li><button onclick="playSong('audio/HeavenArena.mp3', 'Heaven\'s Arena - 16:9 Krollo')">Heaven's Arena - 16:9 Krollo</button></li>
+            <li><button onclick="playSong('audio/TrueBliss.mp3', 'True Bliss - 16:9 Krollo')">True Bliss - 16:9 Krollo</button></li>
+            <li><button onclick="playSong('audio/ThisTime.mp3', 'This Time - 16:9 Krollo')">This Time - 16:9 Krollo</button></li>
+            <li><button onclick="playSong('audio/IN MY DREAMS.mp3', 'IN MY DREAMS - 16:9 Krollo')">IN MY DREAMS - 16:9 Krollo</button></li>
+            <li><button onclick="playSong('audio/RansomwareIntermission.mp3', 'Ransomware Intermission - 16:9 Krollo ft. 16:9 Kilomanji')">Ransomware Intermission - 16:9 Krollo ft. 16:9 Kilomanji</button></li>
+            <li><button onclick="playSong('audio/DivineMercy.mp3', 'Divine Mercy - 16:9 Krollo')">Divine Mercy - 16:9 Krollo</button></li>
+            <li><button onclick="playSong('audio/whatsleftofme.mp3', 'whats left of me - Pearlblade')">whats left of me - Pearlblade</button></li>
+            <li><button onclick="playSong('audio/feenrebelion.mp3', 'Fe en Rebelión - yaego')">Fe en Rebelión - yaego</button></li>
+            <li><button onclick="playSong('audio/iseeghosts.mp3', 'iseeghosts! [waitaminute] - yaego')">iseeghosts! [waitaminute] - yaego</button></li>
+            <li><button onclick="playSong('audio/GLASSJAW.mp3', 'GLASSJAW (VIP) - yaego')">GLASSJAW (VIP) - yaego</button></li>
+            <li><button onclick="playSong('audio/Breakout.mp3', 'Breakout - NERD')">Breakout - NERD</button></li>
         </ul>
-
+    </div>
         <!-- Music Player -->
         <div id="audio-controls">
             <audio id="audioPlayer" controls autoplay>
@@ -106,6 +168,18 @@
             <p id="now-playing">Choose a song from the list above to start listening!</p>
         </div>
 
+        <!-- Add a section to display the queue -->
+        <div id="queue-container">
+            <h2>Queue</h2>
+            <ul id="queue-list"></ul>
+        </div>
+
+        <!-- Add controls for skipping, going back, and restarting -->
+        <div id="queue-controls">
+            <button onclick="previousSong()">Previous</button>
+            <button onclick="restartSong()">Restart</button>
+            <button onclick="nextSong()">Next</button>
+        </div>
         
     </div>
     <div class="content">
@@ -116,20 +190,114 @@
     <div class="home">
         <a href="index.html"><h1>Home</h1></a>
 
-    <script>
-        function playSong(file, title) {
-            var audioPlayer = document.getElementById('audioPlayer');
-            var audioSource = document.getElementById('audioSource');
-            var nowPlaying = document.getElementById('now-playing');
+        <script>
+            const audioPlayer = document.getElementById('audioPlayer');
+            const audioSource = document.getElementById('audioSource');
+            const nowPlaying = document.getElementById('now-playing');
+            const queueList = document.getElementById('queue-list');
 
-            audioSource.src = file;
-            audioPlayer.load(); // Load the new source
-            audioPlayer.play(); // Play the new song
+            let songQueue = [];
+            let currentSongIndex = 0;
 
-            nowPlaying.textContent = 'Now playing: ' + title; // Update now playing text
-        }
+            function playSong(file, title) {
+                songQueue.push({ file, title });
+                updateQueueDisplay();
+                if (songQueue.length === 1) {
+                    playCurrentSong();
+                }
+            }
 
+            function playCurrentSong() {
+                if (currentSongIndex < songQueue.length) {
+                    const current = songQueue[currentSongIndex];
+                    audioSource.src = current.file;
+                    audioPlayer.load();
+                    audioPlayer.play();
+                    nowPlaying.textContent = 'Now playing: ' + current.title;
+                }
+            }
+
+            function updateQueueDisplay() {
+                queueList.innerHTML = '';
+                songQueue.forEach((song, index) => {
+                    const li = document.createElement('li');
+                    li.textContent = song.title;
+                    li.dataset.index = index;
+
+                    // Add remove button
+                    const removeButton = document.createElement('button');
+                    removeButton.textContent = 'Remove';
+                    removeButton.onclick = () => removeSong(index);
+
+                    // Add move up button
+                    const moveUpButton = document.createElement('button');
+                    moveUpButton.textContent = '↑';
+                    moveUpButton.onclick = () => moveSongUp(index);
+
+                    // Add move down button
+                    const moveDownButton = document.createElement('button');
+                    moveDownButton.textContent = '↓';
+                    moveDownButton.onclick = () => moveSongDown(index);
+
+                    li.appendChild(removeButton);
+                    li.appendChild(moveUpButton);
+                    li.appendChild(moveDownButton);
+                    queueList.appendChild(li);
+                });
+            }
+
+            function removeSong(index) {
+                songQueue.splice(index, 1);
+                if (index <= currentSongIndex && currentSongIndex > 0) {
+                    currentSongIndex--;
+                }
+                updateQueueDisplay();
+            }
+
+            function moveSongUp(index) {
+                if (index > 0) {
+                    [songQueue[index], songQueue[index - 1]] = [songQueue[index - 1], songQueue[index]];
+                    updateQueueDisplay();
+                }
+            }
+
+            function moveSongDown(index) {
+                if (index < songQueue.length - 1) {
+                    [songQueue[index], songQueue[index + 1]] = [songQueue[index + 1], songQueue[index]];
+                    updateQueueDisplay();
+                }
+            }
+
+            function nextSong() {
+                if (currentSongIndex < songQueue.length - 1) {
+                    currentSongIndex++;
+                    playCurrentSong();
+                }
+            }
+
+            function previousSong() {
+                if (currentSongIndex > 0) {
+                    currentSongIndex--;
+                    playCurrentSong();
+                }
+            }
+
+            function restartSong() {
+                playCurrentSong();
+            }
+
+            audioPlayer.addEventListener('ended', () => {
+                if (currentSongIndex < songQueue.length - 1) {
+                    currentSongIndex++;
+                    playCurrentSong();
+                } else {
+                    nowPlaying.textContent = 'Queue finished. Select more songs!';
+                    songQueue = [];
+                    currentSongIndex = 0;
+                    updateQueueDisplay();
+                }
+            });
+        </script>
         
-    </script>
 </body>
 </html>

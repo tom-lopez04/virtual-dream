@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-image: url('images/t3skyring.png');
+    background-image: url('../images/towerblog.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -15,25 +15,12 @@ body {
     position: relative;
 }
 
+.content{
 
-.content a {
-
-    text-decoration: none;
-    color:aqua
+    text-decoration:none;
+    color: #0003cc;
+    background-color: rgba(255, 255, 255, 0.397);
 }
-
-.song-list-container {
-    height: 200px; /* adjust height as needed */
-    overflow-y: auto;
-    width: 100%;
-    max-width: 500px;
-    margin-bottom: 20px;
-    border: 2px solid white;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
-
 
 .home{
     position: absolute;
@@ -44,10 +31,8 @@ body {
 
 .home a {
     text-decoration: none;
-    color: #23008c;
+    color: #04d9ff;
 }
-
-
 
 .home a:hover {
     cursor: pointer;

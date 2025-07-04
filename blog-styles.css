@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-image: url('images/t3skyring.png');
+    background-image: url('images/towers.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,7 +22,7 @@ body {
     color:aqua
 }
 
-.song-list-container {
+.blog-entries {
     height: 200px; /* adjust height as needed */
     overflow-y: auto;
     width: 100%;

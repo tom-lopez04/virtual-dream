@@ -26,7 +26,7 @@ function startGame() {
 function stopGame() {
   if (!startTime) {
      // Too early: show feedback image for clicking too soon
-     feedback.src = 'zaf-fail.png'; // Replace with your "too early" image path
+     feedback.src = "images/zaf-fail.png"; // Replace with your "too early" image path
      feedback.style.width="600px";
      feedback.style.height="338px";
      feedback.style.paddingTop = "20px";
@@ -40,14 +40,14 @@ function stopGame() {
  
    if (reactionTime <= 333) {
      // Fast reaction: show feedback image for fast reactions
-     feedback.src = 'zaf-success.png'; // Replace with your fast reaction image path
+     feedback.src = 'images/zaf-success.png'; // Replace with your fast reaction image path
      feedback.style.width="600px";
      feedback.style.height="338px";
      feedback.style.paddingTop = "20px";
      result.textContent = `Great! You broke the throw and punished him. Your reaction time was: ${reactionTime} ms. (or ${reactionTime*60/1000} frames at 60fps)`;
    } else {
      // Slow reaction: show feedback image for slower reactions
-     feedback.src = 'zaf-fail.png'; // Replace with your slow reaction image path
+     feedback.src = 'images/zaf-fail.png'; // Replace with your slow reaction image path
      feedback.style.width="600px";
      feedback.style.height="338px";
      feedback.style.paddingTop = "20px";
