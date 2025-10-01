@@ -21,7 +21,7 @@ function startGame() {
     box.style.backgroundColor = 'green'; // Turn green after delay
     startTime = Date.now(); // Record the start time
   }, randomDelay);
-}
+} 
 
 function stopGame() {
   if (!startTime) {
